@@ -1,7 +1,9 @@
-import javax.swing.*;
+
 import java.util.ArrayList;
+import javax.swing.*;
 
 class Clientes {
+
     String usuario;
     int senhaA;
 
@@ -22,13 +24,52 @@ class Clientes {
                     conta.menuPrincipal();
                     return;
                 }
-            } JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
+            }
+            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Senha deve ser um número válido!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
 
     void menuPrincipal() {
-        JOptionPane.showMessageDialog(null, "MENU PRINCIPAL - Bem-vindo, " + usuario);
+        while (true) {
+
+            String menu = JOptionPane.showInputDialog(null, "MENU PRINCIPAL - Bem-vindo, " + usuario + "\n" + "1 - SALDO \n 2 - CREDITO\n 3 - EMPRESTIMO\n 4 - SAIR");
+            try {
+                int menuc = Integer.parseInt(menu);
+
+                switch (menuc) {
+
+                    case 1:
+                        exibirSaldo();
+                        break;
+                    case 2:
+                        credito();
+                        break;
+                    case 3:
+                        emprestimo();
+                        break;
+                    case 4:
+                        System.exit(0);
+                    default:
+                        JOptionPane.showMessageDialog(null, "OPCAO INVALIDA", "Erro", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "AS OPCOES DEVEM SER EM NUMEROS", "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+    }
+
+    void exibirSaldo() {
+        JOptionPane.showMessageDialog(null, "SALDO");
+    }
+
+    void credito() {
+        JOptionPane.showMessageDialog(null, "CREDITO");
+    }
+
+    void emprestimo() {
+        JOptionPane.showMessageDialog(null, "EMPRESTIMO");
     }
 }
