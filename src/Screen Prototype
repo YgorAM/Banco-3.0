@@ -1,0 +1,26 @@
+import javax.swing.JButton;
+ import javax.swing.JFrame;
+
+  public class app {
+
+      public static void main(String[] args) throws Exception {
+          JFrame janela = new JFrame();
+             
+            // Criar botao
+            JButton botao = new JButton("Login");
+
+            //Adicionar o botao
+            janela.add(botao);
+            
+            janela.setLayout(null);
+            botao.setBounds(100, 100, 300, 50);
+
+            //Definicoes e criacoes da janela
+            janela.setTitle("YgorNU");
+            janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            janela.setBounds(800, 500, 500, 500);
+            janela.setVisible(true);
+
+            
+      }
+}
